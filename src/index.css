@@ -9,8 +9,7 @@ body{
 }
 
  .app{
-  /* background-image: url(./assets/);
-  background-image: url(./assets/); */
+  background-image: url(./assets/cold-bg.jpg);
   background-size: cover;
   background-position: bottom;
   transition: 0.4 ease-out;
@@ -24,7 +23,7 @@ main{
 }
 
 .app.warm{
-  /* background-image: url(./assets/); */
+  background-image: url(./assets/warm-bg.jpg); 
 }
 
 .search-box{
@@ -51,7 +50,7 @@ main{
   color: #313131;
   font-size: 20px;
   
-  transition: 0.4 ease;
+  transition: 0.4s ease;
 }
 
 .search-box .search-bar:focus {
