@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-require("dotenv").config();
 
 
 const api = {
-  key: process.env.WEATHER_KEY,
+  key: process.env.REACT_WEATHER_KEY,
   base: "https://api.openweathermap.org/data/2.5/"
 };
 
@@ -18,7 +17,7 @@ function App() {
         .then(result => {
           setWeather(result);
           setQuery("");
-          console.log("weather key is", process.env.WEATHER_KEY);
+          console.log("weather key is", process.env.REACT_WEATHER_KEY);
         });
     }
   };
@@ -66,6 +65,7 @@ function App() {
       }
     >
       <main>
+        <div className="App"> this is react weather key {process.env.REACT_WEATHER_KEY} </div>
         <div className="search-box">
           <input
             type="text"
