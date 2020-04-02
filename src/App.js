@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+require("dotenv").config();
+
 
 const api = {
-  key: process.env.weatherApiKey,
+  key: process.env.WEATHER_KEY,
   base: "https://api.openweathermap.org/data/2.5/"
 };
 
@@ -16,6 +18,7 @@ function App() {
         .then(result => {
           setWeather(result);
           setQuery("");
+          console.log("weather key is", process.env.WEATHER_KEY);
         });
     }
   };
