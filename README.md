@@ -2,7 +2,7 @@
 
 This is a simple react project that uses an weather api to return results to the user. Depending on the temperature, the background updates to show either cold or warm conditions. 
 
-Based on a tutorial following a tutorial by [Tyler Potts](https://github.com/TylerPottsDev/).
+Based on following a tutorial by [Tyler Potts](https://github.com/TylerPottsDev/).
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
