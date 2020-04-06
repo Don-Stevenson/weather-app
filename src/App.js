@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-
 const api = {
   key: process.env.REACT_WEATHER_KEY,
   base: "https://api.openweathermap.org/data/2.5/"
@@ -17,7 +16,8 @@ function App() {
         .then(result => {
           setWeather(result);
           setQuery("");
-          console.log("weather key is", process.env.REACT_WEATHER_KEY);
+          console.log("weather url is ", api.base)
+          console.log("weather key is", weatherNow);
         });
     }
   };
@@ -65,8 +65,7 @@ function App() {
       }
     >
       <main>
-        <div className="App"> this is react weather key {process.env.REACT_WEATHER_KEY} </div>
-        <div className="search-box">
+         <div className="search-box">
           <input
             type="text"
             className="search-bar"
