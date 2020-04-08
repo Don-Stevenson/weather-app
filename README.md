@@ -4,6 +4,20 @@ This is a simple react project that uses an weather api to return results to the
 
 Based on following a tutorial by [Tyler Potts](https://github.com/TylerPottsDev/).
 
+Weather App looks like:
+
+### Home Page 
+["Home Page"](https://github.com/Don-Stevenson/weather-app/blob/master/docs/home%20page.png)
+
+### Toronto
+["Toronto"](https://github.com/Don-Stevenson/weather-app/blob/master/docs/Toronto.png)
+
+### Miami
+["Miami"](https://github.com/Don-Stevenson/weather-app/blob/master/docs/Miami.png)
+
+
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
