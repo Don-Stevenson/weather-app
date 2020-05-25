@@ -7,13 +7,13 @@ Based on following a tutorial by [Tyler Potts](https://github.com/TylerPottsDev/
 Weather App looks like:
 
 ### Home Page 
-!["Home Page"](https://github.com/Don-Stevenson/weather-app/blob/master/docs/home%20page.png)
+!["Home Page"](https://github.com/Don-Stevenson/weather-app/blob/master/docs/Homepage.png)
 
 ### Toronto
 !["Toronto"](https://github.com/Don-Stevenson/weather-app/blob/master/docs/Toronto.png)
 
-### Miami
-!["Miami"](https://github.com/Don-Stevenson/weather-app/blob/master/docs/Miami.png)
+### Whitehorse
+!["Whitehorse"](https://github.com/Don-Stevenson/weather-app/blob/master/docs/Whitehorse.png)
 
 
 
