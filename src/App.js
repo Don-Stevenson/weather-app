@@ -20,6 +20,7 @@ function App() {
           `${api.base}weather?q=${query}&units=metric&APPID=${api.key}`
         );
         let resultsJSON = await results.json();
+        console.log("weather is ", resultsJSON);
         setWeather(resultsJSON);
         setQuery("");
       } catch (error) {
@@ -96,7 +97,10 @@ function App() {
             </div>
             <div className="weather-box">
               <div className="temp">{Math.round(weather.main.temp)}°c</div>
-              <div className="weather">{weather.weather[0].main}</div>
+              <div className="weather">Current conditions: {weather.weather[0].description}</div>
+              <div className="wind">
+                Wind: {Math.round(weather.wind.speed * 3.6)} km/h {weather.wind.direction}
+              </div>
             </div>
           </div>
         ) : (

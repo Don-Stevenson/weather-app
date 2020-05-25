@@ -97,7 +97,14 @@ main {
 
 .weather-box .weather {
   color: #FFF;
-  font-size: 48px;
+  font-size: 35px;
+  font-weight: 700;
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+}
+
+.weather-box .wind {
+  color: #FFF;
+  font-size: 30px;
   font-weight: 700;
   text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
 }
