@@ -11,6 +11,8 @@ function App() {
   const [query, setQuery] = useState("");
   const [weather, setWeather] = useState({});
 
+  // handling the search with aysnc await
+  //*************************************
   async function search(evt) {
     if (evt.key === "Enter") {
       try {
@@ -25,7 +27,8 @@ function App() {
       }
     }
   }
-
+  // handling the dates to be displayed
+  //**********************************
   const dateBuilder = d => {
     const months = [
       "January",
@@ -59,6 +62,8 @@ function App() {
     return `${day} ${date} ${month} ${year}`;
   };
   return (
+    // handling the weather display to show different backgrounds depending on temperatures
+    //*************************************************************************************
     <div
       className={
         typeof weather.main != "undefined"
@@ -67,6 +72,8 @@ function App() {
             : "app"
           : "app"
       }
+      // main html ffor the app
+      //************************
     >
       <main>
         <div className="search-box">
