@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 
+// Putting the api key into a base and a key inside an object
+//********************************************************** */
 const api = {
-  key: process.env.EXAMPLE,
+  key: process.env.REACT_APP_WEATHER_KEY,
   base: "https://api.openweathermap.org/data/2.5/"
 };
+
+console.log("weather key is", api.key);
 
 function App() {
   const [query, setQuery] = useState("");
