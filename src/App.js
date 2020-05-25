@@ -97,9 +97,11 @@ function App() {
             </div>
             <div className="weather-box">
               <div className="temp">{Math.round(weather.main.temp)}°c</div>
-              <div className="weather">Current conditions: {weather.weather[0].description}</div>
+              <div className="weather">
+                Current conditions: {weather.weather[0].description}
+              </div>
               <div className="wind">
-                Wind: {Math.round(weather.wind.speed * 3.6)} km/h {weather.wind.direction}
+                Wind: {Math.round(weather.wind.speed * 3.6)} km/h
               </div>
             </div>
           </div>
