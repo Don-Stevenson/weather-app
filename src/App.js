@@ -7,22 +7,24 @@ const api = {
   base: "https://api.openweathermap.org/data/2.5/"
 };
 
-console.log("weather key is", api.key);
-
 function App() {
   const [query, setQuery] = useState("");
   const [weather, setWeather] = useState({});
 
-  const search = evt => {
+  async function search(evt) {
     if (evt.key === "Enter") {
-      fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
-        .then(res => res.json())
-        .then(result => {
-          setWeather(result);
-          setQuery("");
-        });
+      try {
+        let results = await fetch(
+          `${api.base}weather?q=${query}&units=metric&APPID=${api.key}`
+        );
+        let resultsJSON = await results.json();
+        setWeather(resultsJSON);
+        setQuery("");
+      } catch (error) {
+        console.error(error);
+      }
     }
-  };
+  }
 
   const dateBuilder = d => {
     const months = [
