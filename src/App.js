@@ -73,7 +73,7 @@ function App() {
             : "app"
           : "app"
       }
-      // main html ffor the app
+      // main jsx for the app
       //************************
     >
       <main>
@@ -87,27 +87,40 @@ function App() {
             onKeyPress={search}
           />
         </div>
-        {typeof weather.main != "undefined" ? (
-          <div>
-            <div className="location-box">
-              <div className="location">
-                {weather.name}, {weather.sys.country}
+
+        {
+          // if a location is found display the following jsx
+          //**************************************************/
+          typeof weather.main != "undefined" ? (
+            <div>
+              <div className="location-box">
+                <div className="location">
+                  {weather.name}, {weather.sys.country}
+                </div>
+                <div className="date">{dateBuilder(new Date())} </div>
               </div>
-              <div className="date">{dateBuilder(new Date())} </div>
+              <div className="weather-box">
+                <div className="temp">{Math.round(weather.main.temp)}°c</div>
+                <div className="weather">
+                  Current conditions: {weather.weather[0].description}
+                </div>
+                <div className="wind">
+                  Wind: {Math.round(weather.wind.speed * 3.6)} km/h
+                </div>
+              </div>
             </div>
+          ) : // handle an unknown location
+          //***************************
+          weather.cod === "404" ? (
             <div className="weather-box">
-              <div className="temp">{Math.round(weather.main.temp)}°c</div>
-              <div className="weather">
-                Current conditions: {weather.weather[0].description}
-              </div>
-              <div className="wind">
-                Wind: {Math.round(weather.wind.speed * 3.6)} km/h
-              </div>
+              <div className="error"> {weather.message}!</div>
             </div>
-          </div>
-        ) : (
-          ""
-        )}
+          ) : (
+            // display no search results upon load or no search results entered
+            //****************************************************************/
+            ""
+          )
+        }
       </main>
     </div>
   );
