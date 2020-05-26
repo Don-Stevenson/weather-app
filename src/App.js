@@ -53,6 +53,8 @@ function App() {
       "Friday",
       "Saturday"
     ];
+    // Setting the date by using getDay, getDate, etc.
+    // ***********************************************
 
     let day = days[d.getDay()];
     let date = d.getDate();
