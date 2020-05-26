@@ -20,7 +20,6 @@ function App() {
           `${api.base}weather?q=${query}&units=metric&APPID=${api.key}`
         );
         let resultsJSON = await results.json();
-        console.log("weather is ", resultsJSON);
         setWeather(resultsJSON);
         setQuery("");
       } catch (error) {
