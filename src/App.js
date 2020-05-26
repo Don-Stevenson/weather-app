@@ -116,8 +116,8 @@ function App() {
               <div className="error"> {weather.message}!</div>
             </div>
           ) : (
-            // display no search results upon load or no search results entered
-            //****************************************************************/
+            // display no search results upon load or no search results when enter is hit
+            //**************************************************************************/
             ""
           )
         }
