@@ -111,7 +111,7 @@ function App() {
               </div>
             </div>
           ) : // handle an unknown location
-          //***************************
+          //*******************************/
           weather.cod === "404" ? (
             <div className="weather-box">
               <div className="error"> {weather.message}!</div>
