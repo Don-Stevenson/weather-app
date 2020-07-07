@@ -1,6 +1,6 @@
 # Weather App
 
-This ReactJS project uses an weather api to return results to the user. Depending on the temperature, the background updates to show either cold or warm conditions. 
+This ReactJS project uses a weather api to return results to the user. Depending on the temperature, the background updates to show either cold or warm conditions. 
 
 Based on following a tutorial by [Tyler Potts](https://github.com/TylerPottsDev/) with a few additons such as, using async await and adding some other variables to display like windspeed.
 
