@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 // Putting the api key into a base and a key inside an object
-//********************************************************** */
+// ********************************************************** 
 const api = {
   key: process.env.REACT_APP_WEATHER_KEY,
   base: "https://api.openweathermap.org/data/2.5/",
@@ -32,7 +32,7 @@ function App() {
     }
   };
   // handling the dates to be displayed
-  //**********************************
+  // **********************************
   const dateBuilder = (d) => {
     const months = [
       "January",
@@ -69,7 +69,7 @@ function App() {
   };
   return (
     // handling the weather display to show different backgrounds depending on temperatures
-    //*************************************************************************************
+    // ************************************************************************************
     <div
       className={
         typeof weather.main != "undefined"
@@ -95,7 +95,7 @@ function App() {
 
         {
           // if a location is found display the following jsx
-          //**************************************************/
+          //*************************************************
           typeof weather.main != "undefined" ? (
             <div>
               <div className="location-box">
@@ -115,14 +115,14 @@ function App() {
               </div>
             </div>
           ) : // handle an unknown location
-          //*******************************/
+          // ******************************
           weather.cod === "404" ? (
             <div className="weather-box">
               <div className="error"> {weather.message}!</div>
             </div>
           ) : (
             // display no search results upon load or no search results when enter is hit
-            //**************************************************************************/
+            // **************************************************************************
             ""
           )
         }
