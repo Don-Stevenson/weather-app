@@ -4,16 +4,20 @@ import React, { useState } from "react";
 //********************************************************** */
 const api = {
   key: process.env.REACT_APP_WEATHER_KEY,
-  base: "https://api.openweathermap.org/data/2.5/"
+  base: "https://api.openweathermap.org/data/2.5/",
 };
 
+console.log("api key", api.key);
+
 function App() {
+  // setting query and weather to their defaults using useState
+  // **********************************************************
   const [query, setQuery] = useState("");
   const [weather, setWeather] = useState({});
 
   // handling the search with aysnc await
-  //*************************************
-  async function search(evt) {
+  // *************************************
+  const search = async (evt) => {
     if (evt.key === "Enter") {
       try {
         let results = await fetch(
@@ -26,10 +30,10 @@ function App() {
         console.error(error);
       }
     }
-  }
+  };
   // handling the dates to be displayed
   //**********************************
-  const dateBuilder = d => {
+  const dateBuilder = (d) => {
     const months = [
       "January",
       "February",
@@ -42,7 +46,7 @@ function App() {
       "September",
       "October",
       "November",
-      "December"
+      "December",
     ];
     const days = [
       "Sunday",
@@ -51,7 +55,7 @@ function App() {
       "Wednesday",
       "Thursday",
       "Friday",
-      "Saturday"
+      "Saturday",
     ];
     // Setting the date by using getDay, getDate, etc.
     // ***********************************************
@@ -83,7 +87,7 @@ function App() {
             type="text"
             className="search-bar"
             placeholder="Search..."
-            onChange={e => setQuery(e.target.value)}
+            onChange={(e) => setQuery(e.target.value)}
             value={query}
             onKeyPress={search}
           />
