@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import Header from "./components/Header"
 // Putting the api key into a base and a key inside an object
 // ********************************************************** 
 const api = {
@@ -71,16 +71,17 @@ function App() {
     // handling the weather display to show different backgrounds depending on temperatures
     // ************************************************************************************
     <div
-      className={
-        typeof weather.main != "undefined"
-          ? weather.main.temp > 16
-            ? "app warm"
-            : "app"
-          : "app"
-      }
-      // main jsx for the app
-      //************************
+    className={
+      typeof weather.main != "undefined"
+      ? weather.main.temp > 16
+      ? "app warm"
+      : "app"
+      : "app"
+    }
+    // main jsx for the app
+    //************************
     >
+      <Header></Header>
       <main>
         <div className="search-box">
           <input
