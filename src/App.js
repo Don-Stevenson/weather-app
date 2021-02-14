@@ -1,15 +1,13 @@
 import React, { useState } from "react";
-import Header from "./components/Header"
+import Header from "./components/Header";
 // Putting the api key into a base and a key inside an object
-// ********************************************************** 
+// **********************************************************
 const api = {
   key: process.env.REACT_APP_WEATHER_KEY,
   base: "https://api.openweathermap.org/data/2.5/",
 };
 
-console.log("api key", api.key);
-
-function App() {
+const App = () => {
   // setting query and weather to their defaults using useState
   // **********************************************************
   const [query, setQuery] = useState("");
@@ -71,15 +69,15 @@ function App() {
     // handling the weather display to show different backgrounds depending on temperatures
     // ************************************************************************************
     <div
-    className={
-      typeof weather.main != "undefined"
-      ? weather.main.temp > 16
-      ? "app warm"
-      : "app"
-      : "app"
-    }
-    // main jsx for the app
-    //************************
+      className={
+        typeof weather.main != "undefined"
+          ? weather.main.temp > 16
+            ? "app warm"
+            : "app"
+          : "app"
+      }
+      // main jsx for the app
+      //************************
     >
       <Header></Header>
       <main>
@@ -130,6 +128,6 @@ function App() {
       </main>
     </div>
   );
-}
+};
 
 export default App;
