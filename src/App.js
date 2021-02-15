@@ -29,8 +29,8 @@ const App = () => {
       }
     }
   };
-  // handling the dates to be displayed
-  // **********************************
+  // handling the dates to be displayed by passing in NewDate as d
+  // *************************************************************
   const dateBuilder = (d) => {
     const months = [
       "January",
