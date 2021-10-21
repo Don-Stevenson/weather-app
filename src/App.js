@@ -18,10 +18,10 @@ const App = () => {
   const search = async (evt) => {
     if (evt.key === "Enter") {
       try {
-        let results = await fetch(
+        const results = await fetch(
           `${api.base}weather?q=${query}&units=metric&APPID=${api.key}`
         );
-        let resultsJSON = await results.json();
+        const resultsJSON = await results.json();
         setWeather(resultsJSON);
         setQuery("");
       } catch (error) {
@@ -58,10 +58,10 @@ const App = () => {
     // Setting the date by using getDay, getDate, etc.
     // ***********************************************
 
-    let day = days[d.getDay()];
-    let date = d.getDate();
-    let month = months[d.getMonth()];
-    let year = d.getFullYear();
+    const day = days[d.getDay()];
+    const date = d.getDate();
+    const month = months[d.getMonth()];
+    const year = d.getFullYear();
 
     return `${day} ${date} ${month} ${year}`;
   };
