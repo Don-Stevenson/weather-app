@@ -31,6 +31,9 @@ const App = () => {
   };
   // handling the dates to be displayed by passing in NewDate as d
   // *************************************************************
+
+  // todo: use the format options on the getDate & new Date calls instead of using months
+  // and days arrays
   const dateBuilder = (d) => {
     const months = [
       "January",
