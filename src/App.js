@@ -34,40 +34,17 @@ const App = () => {
 
   // todo: use the format options on the getDate & new Date calls instead of using months
   // and days arrays
-  const dateBuilder = (d) => {
-    const months = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ];
-    const days = [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-    ];
-    // Setting the date by using getDay, getDate, etc.
-    // ***********************************************
+  const dateBuilder = (unformattedDate) => {
 
-    const day = days[d.getDay()];
-    const date = d.getDate();
-    const month = months[d.getMonth()];
-    const year = d.getFullYear();
-
+    // Setting the date format by using toLocaleDateString with options
+    // *****************************************************************
+    const day = unformattedDate.toLocaleDateString("en-US", { weekday: 'long' });
+    const date = unformattedDate.toLocaleDateString("en-US", { day: 'numeric' });
+    const month = unformattedDate.toLocaleDateString("en-US", { month: 'long' });
+    const year = unformattedDate.toLocaleDateString("en-US", { year: 'numeric' });
     return `${day} ${date} ${month} ${year}`;
   };
+
   return (
     // handling the weather display to show different backgrounds depending on temperatures
     // ************************************************************************************
@@ -79,8 +56,8 @@ const App = () => {
             : "app"
           : "app"
       }
-      // main jsx for the app
-      //************************
+    // main jsx for the app
+    //************************
     >
       <Header></Header>
       <main>
@@ -94,7 +71,6 @@ const App = () => {
             onKeyPress={search}
           />
         </div>
-
         {
           // if a location is found display the following jsx
           //*************************************************
@@ -117,16 +93,16 @@ const App = () => {
               </div>
             </div>
           ) : // handle an unknown location
-          // ******************************
-          weather.cod === "404" ? (
-            <div className="weather-box">
-              <div className="error"> {weather.message}!</div>
-            </div>
-          ) : (
-            // display no search results upon load or no search results when enter is hit
-            // **************************************************************************
-            ""
-          )
+            // ******************************
+            weather.cod === "404" ? (
+              <div className="weather-box">
+                <div className="error"> {weather.message}!</div>
+              </div>
+            ) : (
+              // display no search results upon load or no search results when enter is hit
+              // **************************************************************************
+              ""
+            )
         }
       </main>
     </div>
